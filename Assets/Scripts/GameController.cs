@@ -13,6 +13,12 @@ public class GameController : MonoBehaviour {
 	[SerializeField] private Vector2 PlayerSpawnPosition;
 	private GameState _gameState;
 	private Player _player;
+	private Observer observer;
+	private int _lives = 3;
+
+	private float _collideChillTimer;
+	private float _collideChillTime = 1f;
+	private bool _isNeedCollide;
 
 
 	private void Awake() {
@@ -26,6 +32,7 @@ public class GameController : MonoBehaviour {
 		_player = playerObject.GetComponent<Player>();
 		_player.SetController(this);
 		_gameState = GameState.started;
+		observer = new Observer();
 	}
 
 	private void Update() {
@@ -39,9 +46,34 @@ public class GameController : MonoBehaviour {
 				EditorApplication.isPlaying = false;
 				break;
 		}
+
+		if (_isNeedCollide)
+			return;
+		
+		_collideChillTimer += Time.unscaledDeltaTime;
+
+		if (!_isNeedCollide && _collideChillTimer >= _collideChillTime) {
+			observer.ToggleColliders(true);
+			_isNeedCollide = true;
+		}
 	}
 
 	public void Damage() {
-		_gameState = GameState.gameover;
+		_lives--;
+		if (_lives <= 0) {
+			_gameState = GameState.gameover;
+			return;
+		}
+		DisableTempColliders();
+	}
+
+	public void AddToObserver(DamageBlock block) {
+		observer.AddToObserver(block);
+	}
+
+	private void DisableTempColliders() {
+		_collideChillTimer = 0;
+		_isNeedCollide = false;
+		observer.ToggleColliders(false);
 	}
 }
