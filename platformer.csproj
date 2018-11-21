@@ -319,6 +319,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DamageBlock.cs" />
+    <Compile Include="Assets\InputManager.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
   </ItemGroup>
