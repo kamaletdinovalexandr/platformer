@@ -20,7 +20,7 @@ public class InputManager : MonoBehaviour {
 			transform.Translate(Vector2.left * _speed * Time.deltaTime);
 		}
 
-		if (_jumpCooldownTimer > _jumpTime &&Input.GetKeyDown(KeyCode.UpArrow)) {
+		if (_jumpCooldownTimer > _jumpTime &&Input.GetKeyDown(KeyCode.Space)) {
 			gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * _force);
 			_jumpCooldownTimer = 0f;
 		}

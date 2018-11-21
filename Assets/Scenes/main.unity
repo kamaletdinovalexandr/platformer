@@ -6095,6 +6095,7 @@ MonoBehaviour:
   ChestPrefab: {fileID: 1041565506398418, guid: ec347c3b8d8854d9e9b8d4a807259a30,
     type: 2}
   PlayerSpawnPosition: {x: -14, y: 0}
+  PlayerLives: 0
 --- !u!4 &1941665854
 Transform:
   m_ObjectHideFlags: 0
@@ -6268,11 +6269,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4544397135919160, guid: ec347c3b8d8854d9e9b8d4a807259a30, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.24
+      value: -4.75
       objectReference: {fileID: 0}
     - target: {fileID: 4544397135919160, guid: ec347c3b8d8854d9e9b8d4a807259a30, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.49
+      value: 2.18
       objectReference: {fileID: 0}
     - target: {fileID: 4544397135919160, guid: ec347c3b8d8854d9e9b8d4a807259a30, type: 2}
       propertyPath: m_LocalPosition.z
