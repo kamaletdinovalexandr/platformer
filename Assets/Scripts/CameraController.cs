@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+	GameObject _target;
+
+	public void SetTarget(GameObject player) {
+		_target = player; 
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
-		
+		if (_target == null)
+			return;
+		UpdatePosition();
+	}
+
+	private void UpdatePosition() {
+		var newCameraPosition = transform.position;
+		newCameraPosition.x = _target.transform.position.x;
+		transform.position = newCameraPosition;
 	}
 }

@@ -4320,6 +4320,7 @@ GameObject:
   - component: {fileID: 1327549194}
   - component: {fileID: 1327549193}
   - component: {fileID: 1327549192}
+  - component: {fileID: 1327549197}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4397,6 +4398,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1327549197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1327549191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225b7617b686b47d9b9b333d6d8d0b33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1360421113
 GameObject:
   m_ObjectHideFlags: 0
@@ -6090,12 +6102,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc068779b97e248cb98d84a633c99634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Camera: {fileID: 1327549197}
   PlayerPrefab: {fileID: 1845391917190384, guid: 1b12cf9eacb2146c6897c139aa9b4895,
     type: 2}
   ChestPrefab: {fileID: 1041565506398418, guid: ec347c3b8d8854d9e9b8d4a807259a30,
     type: 2}
   PlayerSpawnPosition: {x: -14, y: 0}
-  PlayerLives: 0
 --- !u!4 &1941665854
 Transform:
   m_ObjectHideFlags: 0

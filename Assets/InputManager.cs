@@ -5,7 +5,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour {
 	
 	private float _speed = 5f;
-	private float _force = 300;
+	private float _force = 400;
 	private float _jumpCooldownTimer = 0f;
 	private float _jumpTime = 1f;
 

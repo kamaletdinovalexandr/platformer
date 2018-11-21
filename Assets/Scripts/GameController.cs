@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour {
 
 	private enum GameState { init, started, gameover, restart }
 
+	[SerializeField] private CameraController Camera;
 	[SerializeField] private GameObject PlayerPrefab;
 	[SerializeField] private GameObject ChestPrefab;
 	[SerializeField] private Vector2 PlayerSpawnPosition;
@@ -21,6 +22,7 @@ public class GameController : MonoBehaviour {
 	private void Init() {
 		 var playerObject = Instantiate(PlayerPrefab);
 		playerObject.transform.localPosition = PlayerSpawnPosition;
+		Camera.SetTarget(playerObject);
 		_player = playerObject.GetComponent<Player>();
 		_player.SetController(this);
 		_gameState = GameState.started;
